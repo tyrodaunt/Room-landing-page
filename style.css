@@ -1,0 +1,384 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: spartan_bold;
+    src: url(./League_Spartan/static/LeagueSpartan-Bold.ttf);
+}
+
+@font-face {
+    font-family: spartan_regular;
+    src: url(./League_Spartan/static/LeagueSpartan-Regular.ttf);
+}
+.container {
+    width: 1440px;
+    position: relative;
+}
+
+@media (max-width:375px) {
+    .container {
+        width: 375px;
+    } 
+}
+
+.navigations {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    display: flex;
+}
+
+.navigations #hamburger {
+    display: none;
+}
+
+.navigations #close {
+    display: none;
+}
+
+.navigations #logo {
+    height: 20px;
+}
+
+.navigations ul {
+    display: flex;
+    list-style: none;
+    width: 400px;
+    padding-bottom: 10px;
+}
+
+.navigations ul li {
+    position: relative;
+    display: block;
+}
+
+
+.navigations ul li::before {
+    content: '';
+    position:absolute;
+    display:block;
+    height: 2px;
+    top: 30px;
+    left: 0px;
+    right:0;
+}
+
+.navigations ul li:hover::before {
+    background: hsl(0, 0%, 100%);
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+.navigations ul li:not(:last-of-type) {
+    margin-right: 30px;
+}
+
+.navigations ul li:first-of-type {
+    margin-left: 80px;
+}
+
+.navigations ul li a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}
+
+
+@media (max-width:375px) {
+
+    .navigations {
+        position: absolute;
+        top: 0px;
+        left:0px;
+        margin: 0;
+    }
+
+    .navigations #logo {
+        position: absolute;
+        top: 50px;
+        left: 70px;
+        display: block;
+        margin-left: 70px;
+        width: 80px;
+        height: 15px;
+    }
+    
+    .navigations ul {
+        position: relative;
+        background: hsl(0, 0%, 100%);
+        display: none;
+        list-style: none;
+        width: 375px;
+        height: 100px;
+        padding-bottom: 10px;
+    }
+
+    .navigations ul li {
+        position: relative;
+        top: 50px;
+        left: 30px;
+    }
+
+    .navigations ul li a {
+        color:hsl(0, 0%, 0%);
+        margin-left: 0px;
+        font-family: spartan_bold;
+        font-size: 15px;
+    }
+
+    .navigations ul li::before {
+        content: '';
+        position:absolute;
+        display:block;
+        height: 2px;
+        top: 30px;
+        left: 0px;
+        right:0;
+    }
+    
+    .navigations ul li:hover::before {
+        background: hsl(0, 0%, 0%);
+        transition: all 0.2s ease-in-out;
+    }
+    
+
+
+    .navigations #hamburger {
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        display: block;
+        width: 20px;
+        height:20px;
+        cursor: pointer;
+    }
+
+
+
+    .navigations #close {
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        display: block;
+        width: 20px;
+        height:20px;
+        cursor: pointer;
+    }
+
+    .navigations .overlay {
+        z-index: 2;
+        display: block;
+        position: absolute;
+        top: 100px;
+        width: 375px;
+        height: 157vh;
+        background: hsl(0, 0%, 27%);
+        opacity: 0.4;
+    }
+}
+
+
+.slides.active {
+    display: flex;
+}
+
+.slides {
+    display: none;
+}
+
+.slides #mobile_image {
+    display: none;
+}
+
+.slides .textbox {
+    padding-top: 150px;
+    padding-left: 100px;
+    padding-right: 80px;
+}
+
+.textbox h1 {
+    font-family: spartan_bold;
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: hsl(0, 0%, 0%);
+}
+
+.textbox p {
+    color: hsl(0, 0%, 63%);
+    font-family: spartan_regular;
+    margin-bottom: 30px;
+}
+
+.textbox a {
+    text-decoration: none;
+    color: hsl(0, 0%, 0%);
+    letter-spacing: 10px;
+    word-spacing: 10px;
+}
+
+.textbox a:hover {
+    color: hsl(0, 0%, 63%);
+}
+
+.textbox :hover svg path {
+    fill: hsl(0, 0%, 63%);
+}
+
+@media (max-width:375px) {
+    .slides.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+     .slides #destop_image {
+        display: none;
+    }
+    
+    .slides #mobile_image {
+        display: block;
+    }
+    
+    .slides .textbox {
+        padding-top: 80px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 80px;
+    }
+    
+    .textbox h1 {
+        font-size: 32px;
+    }
+    
+
+}
+
+
+.buttons #prev {
+    width: 80px;
+    position: absolute;
+    top: 464px;
+    right: 520px;
+    height: 70px;
+    background: hsl(0, 0%, 0%);
+    cursor: pointer;
+}
+
+#prev img {
+    width:15px;
+    height: 20px;
+    margin: 25px 0 0 30px;
+}
+
+.buttons #prev:hover {
+    background: hsl(0, 0%, 27%);
+    transition: all 0.2s ease-in-out;
+}
+
+.buttons #next {
+    width: 80px;
+    position: absolute;
+    top: 464px;
+    right: 440px;
+    height: 70px;
+    background: hsl(0, 0%, 0%);
+    cursor: pointer;
+}
+
+#next img {
+    width:15px;
+    height: 20px;
+    margin: 25px 0 0 30px;
+}
+
+.buttons #next:hover {
+    background: hsl(0, 0%, 27%);
+}
+
+@media (max-width:375px) {
+    .buttons #prev {
+        width: 60px;
+        top: 310px;
+        right: 60px;
+        height: 50px;;
+    }
+    
+    #prev img {
+        width:15px;
+        height: 20px;
+        margin: 18px 0 0 20px;
+    }
+    
+    
+    .buttons #next {
+        width: 60px;
+        top: 310px;
+        right: 0px;
+        height: 50px;
+    }
+    
+    #next img {
+        width:15px;
+        height: 20px;
+        margin: 18px 0px 0 30px;
+    }
+    
+}
+
+
+.others {
+    display: flex;
+    width: 1440px;
+}
+
+.others .textarea {
+    width: 600px;
+    padding: 50px;
+}
+
+.textarea h1 {
+    color: hsl(0, 0%, 0%);
+    font-family: spartan_regular;
+    font-size: 15px;
+    word-spacing: 5px;
+    letter-spacing: 7px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.textarea p {
+    font-family: spartan_regular;
+    color: hsl(0, 0%, 63%);
+}
+
+@media (max-width:375px) {
+    .others {
+        display: flex;
+        flex-direction: column;
+        width: 375px;
+    }
+    
+    .others .textarea {
+        width: 375px;
+        padding: 30px;
+    }
+    
+    .textarea h1 {
+        color: hsl(0, 0%, 0%);
+        font-family: spartan_regular;
+        font-size: 15px;
+        word-spacing: 5px;
+        letter-spacing: 7px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .textarea p {
+        font-family: spartan_regular;
+        color: hsl(0, 0%, 63%);
+    } 
+}
